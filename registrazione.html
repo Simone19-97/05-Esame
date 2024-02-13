@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrazione</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="/css/registrazione.min.css">
+</head>
+
+<body class="sfondo">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary py-1 navbarLogo mb-5" data-bs-theme="dark">
+            <div class="container-fluid col-12">
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img class="d-inline-block align-text-top mx-auto logo img-xxl" src="immagini/logo_Codex.png"
+                        alt="Logo" title="Logo">
+                </a>
+        </nav>
+    </header>
+    <section>
+
+        <div class="container-fluid vh-100 d-flex align-items-center justify-content-center mb-5 responsive">
+
+            <div class="card p-2 my-5 me-0 col-10 col-md-8 col-xl-6 col-xxl-8 text-white formColor responsive">
+
+                <p class="text-center mb-4 fw-bold fs-1 font-monospace col-12 titolo">Registrazione</p>
+                <p class="text-center mb-2 fw-medium fs-5 col-lg-10 col-md-10 col-12 mx-auto sottotitolo">
+                    Compila il form
+                    per registrarti e accedere a contenuti esclusivi</p>
+
+                <form
+                    class="d-flex align-items-center justify-content-center mx-auto col-11 col-md-9 col-xl-10 col-xxl-8"
+                    action="REGISTRAZIONE.AVVENTURA=1" method="post">
+                    <div class="form-group w-100 me-1">
+
+                        <!--INPUT NOME -->
+                        <label for="nome" class="text-white testo-xxl-label">Nome</label>
+                        <input title="Inserisci il tuo nome" type="text" class="form-control mb-2 p-1 testo-xxl-input"
+                            id="nome" placeholder="Inserisci il tuo nome" minlength="4" maxlength="18" required>
+                        <p id="messaggio-nome" class="form-text mb-1 text-warning fst-italic testo-xxl-input-errore">
+                        </p>
+
+                        <!--INPUT COGNOME -->
+                        <label for="cognome" class="text-white testo-xxl-label">Cognome</label>
+                        <input title="Inserisci il tuo cognome" type="text"
+                            class="form-control mb-2 p-1 testo-xxl-input" id="cognome"
+                            placeholder="Inserisci il tuo cognome" minlength="3" maxlength="18" value="" required>
+                        <div id="messaggio-cognome"
+                            class="form-text text-warning mb-1 fst-italic testo-xxl-input-errore"></div>
+
+                        <!-- INPUT RESIDENZA -->
+                        <label for="cognome" class="text-white testo-xxl-label">Residenza</label>
+                        <select title="Seleziona la tua residenza"
+                            class="form-control mb-2 p-1 dropup col-8 testo-xxl-input" id="residenza" required>
+                            <option value="" disabled selected>Seleziona il tuo comune di residenza</option>
+                        </select>
+                        <div id="messaggio-residenza"
+                            class="form-text mb-1 text-warning  fst-italic testo-xxl-input-errore"></div>
+                            
+                        <!--INPUT EMAIL-->
+                        <label for="email" class="text-white testo-xxl-label">Email</label>
+                        <input title="Inserisci la tua e-mail" type="email"
+                            class="form-control mb-2 p-1 testo-xxl-input" id="email"
+                            placeholder="Inserisci la tua email" value="" required>
+                        <div id="messaggio-email"
+                            class="form-text mb-1 text-warning  fst-italic testo-xxl-input-errore"></div>
+
+                        <!--INPUT USERNAME -->
+                        <label for="username" class="text-white testo-xxl-label">Username</label>
+                        <input title="Inserisci il tuo username" type="text"
+                            class="form-control mb-2 p-1 testo-xxl-input" id="username"
+                            placeholder="Inserisci il tuo username" minlength="5" maxlength="18" required>
+                        <div id="messaggio-username"
+                            class="form-text mb-1 text-warning  fst-italic testo-xxl-input-errore"></div>
+
+                        <!--INPUT PASSWORD -->
+                        <label for="password" class="text-white testo-xxl-label">Password</label>
+                        <input title="Inserisci la tua password" type="password"
+                            class="form-control mb-2 p-1 testo-xxl-input" id="password"
+                            placeholder="Inserisci la tua password" minlength="6" maxlength="18" required>
+                        <div id="messaggio-password"
+                            class="form-text mb-1 text-warning fst-italic testo-xxl-input-errore"></div>
+
+                        <!--INPUT CHECKBOX TRATTAMENTO DATI PERSONALI-->
+                        <div class="form-check mt-3">
+                            <input class="form-check-input checkbox-dati" type="checkbox" value=""
+                                id="trattamento-dati">
+                            <p id="messaggio-trattamentoDati" class="fw-bold testo-xxl-input-errore"></p>
+                        </div>
+
+                        <!-- PULSANTE REGISTRATI-->
+                        <button type="submit" id="invia"
+                            class="btn btn-pink btn-lg mt-3 mx-auto d-block fw-bold mb-2 testo-xxl-label">Registrati</button>
+                    </div>
+                </form>
+            </div>
+            <script src="/javascript/imposta_email.js"></script>
+            <script src="/javascript/script_comuni.js"></script>
+            <script src="/javascript/registrazione.js"></script>
+        </div>
+    </section>
+
+    <footer class="bg-dark responsive">
+        <div class="d-flex testo-xxl-input">
+            <ul class="list-group-flush col-4 border-0 p-0 text-white text-center ">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Privacy</li>
+                <li class="list-group-item py-2">Informativa</li>
+                <li class="list-group-item py-2">Cookies</li>
+            </ul>
+            <ul class="list-group-flush col-4 p-0 text-white text-center">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Link 1</li>
+            </ul>
+            <ul class="list-group-flush col-4 p-0 text-white text-center">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Link 1</li>
+                <li class="list-group-item py-2">Link 2</li>
+            </ul>
+        </div>
+        <div class="text-center testo-xxl-input">
+            <img src="immagini/logo_Codex.png" class="logo img-xxl" alt="Logo">
+            <p class="text-center text-white my-0">Copyright</p>
+        </div>
+    </footer>
+</body>
+
+</html>

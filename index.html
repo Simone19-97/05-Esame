@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/registrazione.min.css">
+</head>
+
+<body class="sfondo">
+    <header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary py-1" data-bs-theme="dark">
+            <div class="container-fluid col-12">
+                <a class="navbar-brand" href="index.html">
+                    <img class="d-inline-block align-text-top ms-2 me-1 logo img-xxl" src="immagini/logo_Codex.png" alt="Logo"
+                        title="Logo">
+                </a>
+                <!-- Bottone per accedere alla modale di accesso Codex-->
+                <button type="button" class="btn btn-primary testo-xxl-label" data-bs-toggle="modal" title="Accedi alla piattaforma"
+                    data-bs-target="#exampleModal">
+                    Accedi
+                </button>
+
+                <!-- finestra modale -->
+                <div class="modal fade db text-white" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title mx-auto fs-1" id="exampleModalLabel">Accedi a Codex</p>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Form di accesso -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                        <div id="user" class="form-text">Inserisci il tuo username</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <div id="password" class="form-text">Inserisci la tua password</div>
+                                    </div>
+                                    <div class="d-grid gap-2 mx-auto col-5 ">
+                                        <button type="submit" class="btn btn-primary">Accedi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <!-- Form per andare direttamente alla registrazione-->
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+
+            <div class="card p-2 col-10 col-md-8 col-xl-6 my-5 me-0 px-5 formColor col-xxl-8 text-white">
+                <p class="text-center col-12 mb-4 fw-bold fs-2 col-xxl-6 mx-auto titolo">
+                    Un mondo di intrattenimento con un semplice click
+                </p>
+                <p class="text-center mb-2 fs-5 fw-bold col-xxl-5 mx-auto sottotitolo">
+                    Inserisci qui la tua e-mail ed iscriviti a :
+                </p>
+                <img src="immagini/logo_Codex.png" class="logoMaxi mx-auto mb-3 logo-presentazione">
+                
+                <form id="registrazioneForm" class="d-flex align-items-center text-center">
+                    <div class="form-group mx-auto col-md-8 col-12">
+                        <div class="d-flex flex-column align-items-center">
+                            <input type="email" class="form-control mx-auto testo-xxl-input" id="emailRegistrazione"
+                                placeholder="Inserisci la tua e-mail">
+                            <p id="errore" class="text-warning testo-xxl-input-errore"></p>
+                        </div>
+                    </div>
+                </form>
+
+                </form>
+                <button type="button" onclick="registrati()"
+                    class="btn btn-pink text-white fw-bold mt-2 col-md-4 mx-auto testo-xxl-label">Registrati</button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <!-- Footer con i link per le informazioni-->
+    <footer class="bg-dark footer-position responsive-xxl">
+        <div class="d-flex testo-xxl-input">
+            <ul class="list-group-flush col-4 border-0 p-0 text-white text-center">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Privacy</li>
+                <li class="list-group-item py-2">Informativa</li>
+                <li class="list-group-item py-2">Cookies</li>
+            </ul>
+            <ul class="list-group-flush col-4 p-0 text-white text-center">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Link 1</li>
+            </ul>
+            <ul class="list-group-flush col-4 p-0 text-white text-center">
+                <li class="list-group-item py-2">F.A.Q</li>
+                <li class="list-group-item py-2">Link 1</li>
+                <li class="list-group-item py-2">Link 2</li>
+            </ul>
+        </div>
+        <div class="text-center testo-xxl-input">
+            <img src="immagini/logo_Codex.png" class="logo img-xxl" alt="Logo">
+            <p class="text-center text-white my-0">Copyright</p>
+        </div>
+    </footer>
+    <script src="/javascript/salva_email.js"></script>
+</body>
+</html>
